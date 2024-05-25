@@ -2,15 +2,11 @@ server:
   port: 20000
 spring:
   mail:
-#    host: smtp.163.com
     host: smtp.qiye.aliyun.com
-#    password: JHSMQCLSCJEZWIPI
-    password: OdhZ1wFuU7OmXCOI
-#    username: yangshubao911@163.com
-    username: yangshubao@payctop.cn
+    password: QE6Uj48BJFZa591F
+    username: subscription@kunpeng1024.com
     port: 465
-#    from: yangshubao911@163.com
-    from: yangshubao@payctop.cn
+    from: subscription@kunpeng1024.com
     properties:
       mail:
         smtp:
