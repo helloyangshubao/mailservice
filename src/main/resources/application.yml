@@ -1,0 +1,4 @@
+spring:
+  profiles:
+    #普通运行下激活  dev
+    active: dev

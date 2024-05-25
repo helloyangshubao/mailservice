@@ -1,0 +1,73 @@
+server:
+  port: 20000
+spring:
+  mail:
+#    host: smtp.163.com
+    host: smtp.qiye.aliyun.com
+#    password: JHSMQCLSCJEZWIPI
+    password: OdhZ1wFuU7OmXCOI
+#    username: yangshubao911@163.com
+    username: yangshubao@payctop.cn
+    port: 465
+#    from: yangshubao911@163.com
+    from: yangshubao@payctop.cn
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher #解决springfox swagger问题
+  main:
+    allow-circular-references: true #自动解决循环依赖问题
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  data:
+    mongodb:
+      host: dds-uf6e968d6c320534-pub.mongodb.rds.aliyuncs.com
+      port: 3717
+      database: quantaxis
+      username: root
+      password: Kunpeng1024
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      filters: stat,wall
+      initial-size: 20
+      max-active: 200
+      max-pool-prepared-statement-per-connection-size: 200
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 10
+      pool-prepared-statements: false
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 'x'
+    url: jdbc:mysql://47.101.184.156:3389/equity_market_plan?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: sxq_1024
+    password: _!123456&*()!_
+
+  redis:
+    host: 121.43.107.187
+    port: 6379
+    max-wait: 30000    # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    max-active: 100   # 连接池最大连接数（使用负值表示没有限制）
+    max-idle: 20     # 连接池中的最大空闲连接
+    min-idle: 1     # 连接池中的最小空闲连接
+    timeout: 5000   # 连接超时
+    password: 123456
+    database: 0
+    database2: 1
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath:mybatis/mappers/*.xml
+swagger:
+  enabled: true

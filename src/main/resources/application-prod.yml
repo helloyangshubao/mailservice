@@ -1,0 +1,76 @@
+server:
+  port: 30004
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher #解决springfox swagger问题
+  main:
+    allow-circular-references: true #自动解决循环依赖问题
+  mail:
+    host: smtp.qiye.aliyun.com
+    password: OdhZ1wFuU7OmXCOI
+    username: yangshubao@payctop.cn
+    port: 465
+    from: yangshubao@payctop.cn
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  data:
+    mongodb:
+      host: dds-bp11bf8862ed04d41.mongodb.rds.aliyuncs.com
+      port: 3717
+      database: batch
+      username: paycmgdb
+      password: kM%+f89Pad08#!(j
+  #      clientName: batch
+  #      # TCP（socket）连接超时时间，毫秒
+  #      connectionTimeoutMs: 5000
+  #      #TCP（socket）读取超时时间，毫秒
+  #      readTimeoutMs: 15000
+  #      #线程池允许的最大连接数
+  #      connectionsPerHost: 1000
+  #      #线程池空闲时保持的最小连接数
+  #      minConnectionsPerHost: 20
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      filters: stat,wall
+      initial-size: 1
+      max-active: 20
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 1
+      pool-prepared-statements: false
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 'x'
+    name: mysql_test
+    password: C61d8^O+pz5@)A!3
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://rm-bp102j15oqi2l88v2.mysql.rds.aliyuncs.com:5231/message?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: message_user2
+  redis:
+    host: r-bp1l7ygly1rb1h7jme.redis.rds.aliyuncs.com
+    port: 56370
+    max-wait: 30000    # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    max-active: 100   # 连接池最大连接数（使用负值表示没有限制）
+    max-idle: 20     # 连接池中的最大空闲连接
+    min-idle: 1     # 连接池中的最小空闲连接
+    timeout: 5000   # 连接超时
+    password: YT@G!ia8hyA2u)b
+    database: 200
+    database2: 29
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath:mybatis/mappers/*.xml
+
+swagger:
+  enabled: false
